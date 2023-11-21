@@ -1,0 +1,79 @@
+\section{Sección 4}
+
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial, $B$ subconjunto de $V$. Decimos que $B$ es una \textbf{base} de $V$ si genera a $V$ y es linealmente independiente. Decimos que $V$ es de \textbf{dimensión finita} si tiene una base finita.
+\end{definition}
+\begin{proposition}{}{}
+    Sea $V$ un $K$-espacio vectorial. Si $V$ tiene un conjunto generador finito, entonces $V$ tiene una base finita.
+\end{proposition}
+\begin{corollary}{}{}
+    Sea $V$ un $K$-espacio vectorial. $V$ tiene un conjunto generador finito si y solo si $V$ es de dimensión finita.
+\end{corollary}
+\begin{obs}{}{}
+    Si $V$ es de dimensión finita, todo conjunto l.i. es finito.
+\end{obs}
+\begin{theorem}{}{}
+    Sea $V$ un $K$-espacio vectorial de dimensión finita. Todas las bases de $V$ son finitas y tienen el mismo número de elementos.
+\end{theorem}
+\begin{definition}{}{}
+    Si $V$ es un $K$-espacio vectorial de dimensión finita, la \textbf{dimensión} de $V$ es el número de elementos de una base de $V$. 
+\end{definition}
+\begin{notation}{}{}
+    Si $V$ es un $K$-espacio vectorial de dimensión finita, denotaremos por $\dim_K(V)$ a la dimensión de $V$.
+\end{notation}
+
+\begin{theorem}
+    Sea $V$ un $K$-espacio vectorial de dimensión finita. 
+    \begin{enumerate}[label=\alph*)]
+        \item Todo conjunto generador finito se puede reducir a una base.
+        \item Todo conjunto l.i. se puede completar a una base.
+    \end{enumerate}
+\end{theorem}
+\begin{corollary}{}{}
+    Sea $V$ un $K$-espacio vectorial de dimensión finita, $dim_K(V) = n$. Entonces:
+    \begin{enumerate}[label=\alph*)]
+        \item Cualquier conjunto generador con $n$ elementos es una base de $V$.
+        \item Cualquier conjunto l.i. con $n$ elementos es una base de $V$.
+    \end{enumerate}
+\end{corollary}
+\begin{theorem}
+    Sea $V$ un $K$- espacio vectorial de dimensión finita. Sea $W$ un subespacio de $V$.
+    \begin{enumerate}
+        \item $W$ es de dimensión finita.
+        \item Toda base de $W$ se puede completar a una base de $V$.
+        \item $dim_K(W) \leq dim_K(V)$.
+        \item Si $dim_K(W) = dim_K(V)$, entonces $W = V$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial. Sean $U, W$ subespacios de $V$. La suma de $U$ y $W$ es el conjunto:
+    $$U+W = \{u+w \mid u \in U, w \in W\}$$
+    Generalizando, si $U_1, \cdots, U_m \leq V$, la suma de $U_1, \cdots, U_m$ es el conjunto:
+    $$U_1 + \cdots + U_m = \{u_1 + \cdots + u_m \mid u_i U_i \forall i \}$$
+\end{definition}
+\begin{obs}{}{}
+    \begin{enumerate}
+        \item $U+W \leq V$.
+        \item $U \subseteq U+W$ y $W \subseteq U+W$.
+        \item Si $U'$ es otro subespacio que contiene a $U$ y a $W$, entonces contiene a $U+W$.
+    \end{enumerate}
+\end{obs}
+\begin{theorem}
+    Sea $V$ un $K$-espacio vectorial de dimensión finita. Sean $U,W$ subespacios de $V$. Entonces:
+    $$dim_K(U+W) = dim_K(U) + dim_K(W) - dim_K(U \cap W)$$
+\end{theorem}
+
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial. $U, W$ subespacios de $V$. Decimos que $U+W$ es una \textbf{suma directa} si cada $v \in U+W$ se puede escribir de manera única como $v = u+w$ con $u \in U, w \in W$.
+    En general si $U_1, \cdots, U_m$ son subespacios de $V$, $U_1 + U_2 + \cdots + U_m$ es una suma directa si cada $v \in U_1 + U_2 + \cdots + U_m$ se puede escribir de manera única como $v = u_1 + u_2 + \cdots + u_m$ con $u_i \in U_i$ para todo $i$.
+\end{definition}
+\begin{notation}{}{}
+    La suma directa de subespacios se denota por:
+    $$U \oplus W, U_1 \oplus \cdots \oplus U_m $$
+\end{notation}
+\begin{proposition}{}{}
+    Sea $V$ un $K$-espacio vectorial. $U, W$ subespacios de $V$.
+    
+    $U+W$ es una suma directa si y solo si $U \cap W = \{\theta_V\}$.
+\end{proposition}

@@ -1,0 +1,50 @@
+\section{Sección 2 (Subespacios)}
+\begin{definition}{Subespacio}{subespacio} 
+    Sea $V$ un $K$-espacio vectorial y $W$ un subconjunto de $V$. Decimos que $W$ es un subespacio de $V$ si:
+    \begin{enumerate}[label=\alph*)]
+        \item $\theta_V \in W$.
+        \item Si $u,v\in W$, entonces $u+v\in W$.
+        \item Si $\lambda \in K$ y $v\in W$, entonces $\lambda v \in W$.
+    \end{enumerate}
+\end{definition}
+\begin{notation}{}{}
+    $W \leq V$ denotará que $W$ es un subespacio de $V$.
+\end{notation}
+\begin{proposition}{}{}
+    Sea $V$ un $K$-espacio vectorial y $W$ un subconjunto de $V$. $W$ es un subespacio de $V$ si y solo si $W$ con las operaciones restringidas de $V$ es un $K$-espacio vectorial.
+\end{proposition}
+\begin{obs}{}{}
+    Si $V$ es un $K$-espacio vectorial, $W$ subconjunto de $V$, $W \leq V$ si y solo si se cumple:
+    \begin{enumerate}
+        \item $W \neq \varnothing$.
+        \item $\lambda u + v \in W$ para todo $u,v \in W$ y para todo $\lambda \in K$.
+    \end{enumerate}
+\end{obs}
+\begin{proposition}
+    La intersección de una familia no vacía de subespacioes es un subespacio.
+\end{proposition}
+
+\begin{proof}
+    Sea $V$ un $K$-espacio vectorial y $\{W_i \mid i \in I\}$ una familia no vacía de subespacios de $V$.
+\end{proof}
+
+
+\begin{definition}{Combinación Lineal}{}
+    Sea $V$ un $K$ espacio vectorial. Considereamos $m \in \mathbb{N}^+$ y $v_1,\dots,v_m \in V$. Una \textbf{combinación lineal} de $v_1,\dots,v_m$ es una expresión de la forma:
+    $$\lambda_1 v_1 + \cdots + \lambda_m v_m \quad \lambda_1, \cdots, \lambda_m \in K$$
+    De modo más general, si $S$ es un subconjunto de $V$, una \textbf{combinación lineal de vectores de $S$} es un vector de la forma:
+    $$\lambda_1 v_1 + \cdots + \lambda_m v_m \quad \lambda_1, \cdots, \lambda_m \in K, v_1,\dots,v_m \in S, m \in \mathbb{N}^+$$
+\end{definition}
+\begin{obs}{}{}
+    Aunque el conjunto $S$ sea infinito, una combinación lineal de vectores de $S$ es una suma \textbf{finita} de vectores de $S$.
+\end{obs}
+\begin{proposition}
+    Sea $V$ un $K$-espacio vectorial, $S \neq \varnothing$ un subconjunto de $V$. El conjunto de todas las combinaciones lineales de vectores de $S$ cumple lo siguiente:
+    \begin{enumerate}[label=\alph*)]
+        \item Es un subespacio de $V$.
+        \item Contiene a $S$.
+        \item Está contenido en cualquier subespacio de $V$ que contenga a $S$.
+    \end{enumerate}
+\end{proposition}
+
+

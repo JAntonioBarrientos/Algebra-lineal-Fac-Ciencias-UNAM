@@ -1,0 +1,48 @@
+\section{Sección 3}
+\begin{definition}{}{}
+    Sea $V$ un $K$ espacio vectorial, $S$ un subconjunto de $V$. \textbf{El subespacio de $V$ generado por $S$} es el conjunto de combinaciones lineales de $S$, si $S \neq \varnothing$, o $\{\theta_V\}$ si $S = \varnothing$. Lo denotaremos por $\langle S \rangle$ ($span(S)$ en algunos libros).
+    Decimos que $S$ \textbf{genera} a $\langle V \rangle$ o que $S$ es un \textbf{conjunto generador} de $\langle V \rangle$ si $\langle S \rangle = V$.
+\end{definition}
+\begin{notation}{}{}
+   Sean $v_1, \dots, v_n \in V$, a $\langle \{v_1, \dots, v_n\} \rangle$ se le denota por: 
+    
+    $\langle v_1, \dots, v_n \rangle $
+\end{notation}
+\begin{obs}{}{}
+    Si $W \subseteq \langle S \rangle$, pero $W \neq \langle S \rangle$, entonces $S$ no genera a $W$.
+\end{obs}
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial. Una lista $v_1, \cdots, v_m$ de vectores en $V$ es una \textbf{lista linealmente dependiente} si existen escalares $\lambda_1, \cdots, \lambda_m \in K$, no todos nulos, tales que:
+    $$\lambda_1 v_1 + \cdots + \lambda_m v_m = \theta_V$$
+    Decimos que es una \textbf{lista linealmente independiente} si no es linealmente dependiente, es decir si:
+    $$\lambda_1 v_1 + \cdots + \lambda_m v_m = \theta_V \Rightarrow \lambda_1 = \cdots = \lambda_m = 0_K$$
+    Nota: Abreviaremos \textbf{lista linealmente independiente} por \textbf{lista l.i.} y \textbf{lista linealmente dependiente} por \textbf{lista l.d.}
+\end{definition}
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial. Un subconjunto de $S$ de $V$ es un \textbf{conjunto linealmente dependiente} si podemos encontrar $m \in \mathbb{N}^+$ y $v_1, \cdots, v_m \in S$ \textbf{distintos} y $\lambda_1, \cdots, \lambda_m \in K$, no todos nulos, tales que:
+    $$\lambda_1 v_1 + \cdots + \lambda_m v_m = \theta_V$$
+
+    Decimos que $S$ es un \textbf{conjunto linealmente independiente} si no es linealmente dependiente, es decir, si para cualquier $m \in \mathbb{N}^+$  y cualesquiera $v_1, \cdots, v_m \in S$ \textbf{distintos} y $\lambda_1, \cdots, \lambda_m \in K$, se tiene que:
+    $$\lambda_1 v_1 + \cdots + \lambda_m v_m = \theta_V \Rightarrow \lambda_1 = \cdots = \lambda_m = 0_K$$
+\end{definition}
+\begin{obs}{}{}
+    Si $S$ es un conjunto finito con $m$ vectores distintos, digamos $S =\{v_1, \cdots, v_m\}$, para ver si $S$ es l.d. o l.i. debemos ver si existen escalares $\lambda_1, \cdots, \lambda_m \in K$, no todos nulos, tales que:
+    $$\lambda_1 v_1 + \cdots + \lambda_m v_m = \theta_V$$
+    ó si la única forma en que se cumple lo anterior es que $\lambda_1 = \cdots = \lambda_m = 0_K$.
+\end{obs}  
+\begin{lemma}{Dependencia lineal}
+    Sea $V$ un $K$ espacio vectorial, $v_1, \cdots, v_m$ una lista de vectores en $V$. Si $v_1, \cdots, v_m$ es una lista l.d. y $v_1 \neq \theta_v$, existe $j \in \{2, \cdots, m\}$ tal que:
+    \begin{enumerate} [label=\alph*)]
+        \item $v_j \in \langle v_1, \cdots, v_{j-1} \rangle$
+        \item $\langle v_1, \cdots, v_m \rangle = \langle v_1, \cdots, v_{j-1}, v_{j+1}, \cdots, v_m \rangle$
+    \end{enumerate}
+\end{lemma}
+\begin{notation}{}{}
+    $\langle v_1, \cdots, v_{j-1}, v_{j+1}, \cdots, v_m \rangle$ se denota por $\langle v_1, \cdots, \hat{v_j}, \cdots, v_m \rangle$
+\end{notation}
+\begin{theorem}{}{}
+    Sea $V$ un $K$-espacio vectorial. Si $v_1, \cdots, v_m$ es una lista de vectores en $V$ l.i., entonces todo conjunto generador de $V$ tiene al menos $m$ elementos.
+\end{theorem}
+\begin{corollary}{}{}
+    Sea $V$ un $K$-espacio vectorial. Si existe $S$ un subconjunto finito de $V$ generador con $l$ elementos, entonces todo conjunto linealmente independiente tiene a lo más $l$ elementos. En consecuencia no existen conjuntos linealmente independientes infinitos en $V$.
+\end{corollary}

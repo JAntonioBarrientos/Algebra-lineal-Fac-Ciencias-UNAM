@@ -1,0 +1,52 @@
+\section{Seccion 3}
+
+\begin{obs}{}{}{}{}
+    Si $\mathcal{B} = \{v_1, \cdots, v_m, \cdots, v_n\}$ es una base y $\{v_1, \cdots, v_m\}$ es un ortogonal, entonces $\mathcal{B}' = \{v_1, \cdots, v_m, v_{m+1}', \cdots, v_n'\}$.
+\end{obs}
+\begin{corollary}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno de dimensión finita, $W$ subespacio de $V$, $\Gamma$ base ortogonal de $W$. Entonces existe $\mathcal{B}'$ base ortogonal de $V$ tal que $\Gamma \subseteq \mathcal{B}'$.
+\end{corollary}
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno. $\mathcal{B}$ subconjunto de $V$ es una \textbf{base ortonormal de $V$} si es una base ortogonal de $V$ tal que $||v|| = 1 \quad \forall v \in \mathcal{B}$.
+\end{definition}
+\begin{corollary}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno de dimensión finita. Entonces $V$ tiene una base ortonormal.
+\end{corollary}
+\begin{corollary}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno de dimensión finita, $W$ subespacio de $V$, $\Gamma$ base ortonormal de $W$. Entonces existe $\mathcal{B}'$ base ortonormal de $V$ tal que $\Gamma \subseteq \mathcal{B}'$.
+\end{corollary}
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno, dado $W$ un subespacio de $V$ de dimensión finita y $\Gamma = \{w_1, \cdots, w_m\}$ una base ortonormal de $W$, $v \in V$. Definimos la \textbf{proyección de $v$ en $W$ con respecto a $\Gamma$} como:
+    \begin{align*}
+        \pi_{W}(v) = \sum_{i=1}^{m} \langle v,w_i \rangle w_i = \langle v,w_1 \rangle w_1 + \cdots + \langle v,w_m \rangle w_m 
+    \end{align*}
+\end{definition}
+\begin{obs}{}{}
+    $v - \pi_{W}(v) \in W^\perp$.
+\end{obs}
+\begin{obs}{}{}
+    Se verá después que $\pi_{W}(v)$ no depende de la base $\Gamma$.
+\end{obs}
+\begin{theorem}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno, $W$ un subespacio de $V$ de dimensión finita. Entonces:
+    \begin{align*}
+        V = W \oplus W^\perp
+    \end{align*}
+\end{theorem}
+\begin{obs}{}{}
+    $\pi_{W}^\Gamma(v)$ no depende de la base $\Gamma$.
+\end{obs}
+\begin{corollary}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno de dimensión finita, $W$ un subespacio de $V$ de dimensión finita.
+    \begin{align*}
+        dim(V) = dim(W) + dim(W^\perp)
+    \end{align*}
+    Más aún, si $\Gamma = \{w_1, \cdots, w_m\}$ es una base ortogonal de $W$ y $\mathcal{B} = \{w_1, \cdots, w_m, v_{m+1}, \cdots, v_n\}$ es una base ortogonal de $V$, entonces $\{v_{m+1}, \cdots, v_n\}$ es una base ortogonal de $W^\perp$.
+\end{corollary}
+\begin{theorem}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno, $W$ un subespacio de $V$ de dimensión finita. Dado $v \in V$
+    \begin{align*}
+        ||v - \pi_{W}(v)|| \leq ||v - w|| \quad \forall w \in W
+    \end{align*}
+    ($\pi_{W}(v)$ es la mejor aproximación de $v$ en $W$).
+\end{theorem}

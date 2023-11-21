@@ -1,0 +1,152 @@
+\chapter{Producto Interno}
+\section{Sección 1}
+\begin{definition}{producto-escalar}{}
+    Sea $K$ un campo, $V$ un $K$-espacio vectorial. Un producto escalar en $V$ es:
+    \begin{align*}
+        \langle \quad , \quad \rangle : V \times V \rightarrow K 
+    \end{align*}
+    tal que:
+    \begin{enumerate}
+        \item $\langle u,v \rangle = \langle v,u \rangle \quad \forall u,v \in V$ \label{def-productoEscalar-prop-conmutatividad}
+        \item $\langle u+v,w \rangle = \langle u,w \rangle + \langle v,w \rangle \quad \forall u,v,w \in V$ \label{def-productoEscalar-prop-sumas}
+        \item $\langle \lambda u,v \rangle = \lambda \langle u,v \rangle \quad \forall u,v \in V, \lambda \in K$ \label{def-productoEscalar-prop-escalares}
+    \end{enumerate}
+\end{definition}
+
+
+\begin{obs}{}{}
+    Sea $w \in V$. Consideremos la función $T= \langle \quad , w\rangle$ es decir $T : V \rightarrow K$ tal que $T(v) = \langle v,w \rangle$. Entonces $T$ es lineal.
+\end{obs}
+\begin{proof}
+    Demostraremos que $T$ es lineal, es decir, que $T$ cumple:
+    \begin{align*}
+        T(u+v) &= T(u) + T(v) \quad \forall u,v \in V \\
+        T(\lambda u) &= \lambda T(u) \quad \forall u \in V, \lambda \in K
+    \end{align*}
+    Para el primer punto, sean $u,v \in V$:
+    \begin{align*}
+        T(u+v) &= \langle u+v, w \rangle \quad \text{por def. de la imagen de T} \\
+        &= \langle u,w \rangle + \langle v,w \rangle \quad \text{por def. \ref{def-producto-escalar} de prod. escalar punto \ref{def-productoEscalar-prop-sumas}} \\
+        &= T(u) + T(v) \quad \text{por def. de la imagen de T}
+    \end{align*} 
+    Para probar el segundo punto, sea $v \in V$ y $\lambda \in K$:
+    \begin{align*}
+        T(\lambda v) &= \langle \lambda v, w \rangle \quad \text{por def. de la imagen de T} \\
+        &= \lambda \langle v,w \rangle \quad \text{por def. \ref{def-producto-escalar} de prod. escalar punto \ref{def-productoEscalar-prop-escalares}} \\
+        &= \lambda T(v) \quad \text{por def. de la imagen de T}
+    \end{align*}
+\end{proof}
+
+
+\begin{obs}{}{}
+    También abre sumas y saca escalares en la segunda entrada.
+    \begin{align*}
+        \langle u, v+w \rangle &= \langle u,v \rangle + \langle u,w \rangle \quad \forall u,v,w \in V\\
+        \langle u, \lambda v \rangle &= \lambda \langle u,v \rangle \quad \forall u,v \in V, \lambda \in K
+    \end{align*}
+\end{obs}
+
+
+\begin{proof}
+    Para la parte de abrir sumas en la segunda entrada:
+    \begin{align*}
+        \langle w, u+v \rangle &= \langle v+u, w \rangle \quad \text{por def. \ref{def-producto-escalar} de prod. escalar punto \ref{def-productoEscalar-prop-conmutatividad}} \\
+        &= \langle v,w \rangle + \langle u,w \rangle \quad \text{por def. \ref{def-producto-escalar} de prod. escalar punto \ref{def-productoEscalar-prop-sumas}} 
+    \end{align*}
+    Para la parte de sacar escalares en la segunda entrada:
+    \begin{align*}
+        \langle w, \lambda u \rangle &= \langle \lambda u, w \rangle \quad \text{por \ref{def-producto-escalar} de prod. escalar punto \ref{def-productoEscalar-prop-conmutatividad}} \\
+        &= \lambda \langle u,w \rangle \quad \text{por def. \ref{def-producto-escalar} de prod. escalar punto \ref{def-productoEscalar-prop-escalares}} 
+    \end{align*}
+\end{proof}
+
+
+\begin{obs}{}{}
+    $\langle \theta, v \rangle = 0 \quad \forall v \in V$ 
+\end{obs}
+\begin{proof}
+    Sea $v \in V$:
+    \begin{align*}
+        \langle \theta, v \rangle &= \langle 0 \cdot \theta, v \rangle \quad \text{por prop. de espacio vectorial} \\
+        & = 0 \cdot \langle \theta, v \rangle \quad \text{por def. \ref{def-producto-escalar} de prod. escalar punto \ref{def-productoEscalar-prop-escalares}} \\
+        &= 0 \quad \text{por def. de $0_K$}
+    \end{align*}
+\end{proof}
+
+\begin{example}{}{}
+    \begin{enumerate}
+        \item $K=\mathbb{R}, V= \mathbb{R} \, \, u = (x_1, \cdots, x_n), v=(y_1, \cdots, y_n) \in \mathbb{R}^n \, \, \langle u, v \rangle = x_1y_1 + \cdots + x_ny_n$ 
+\begin{proof}
+            Veremos que $\langle \quad, \quad \rangle$ es un producto escalar en $\mathbb{R}^n$. Procederemos a verificar la def. \ref{def-producto-escalar} de producto escalar:
+            Para el punto \ref{def-productoEscalar-prop-conmutatividad}:
+
+            Sean $u,v \in \mathbb{R}^n$:
+            \begin{align*}
+                \langle u,v \rangle &= x_1y_1 + \cdots + x_ny_n \quad \text{por def. de $\langle \quad, \quad \rangle$} \\
+                &= y_1x_1 + \cdots + y_nx_n \quad \text{por conmutatividad de $\mathbb{R}$} \\
+                &= \langle v,u \rangle \quad \text{por def. de $\langle \quad, \quad \rangle$}
+            \end{align*}
+\end{proof}
+        \item $K=\mathbb{R}, V = C[0,1]= \{f:[0,1] \rightarrow \mathbb{R} \mid f \text{ es continua}\}$ con:
+        \begin{align*}
+            \langle f, g \rangle = \int_{0}^{1} f(t)g(t) dt \quad \forall f,g \in V
+        \end{align*}
+        \item 
+    \end{enumerate}
+\end{example}
+
+
+\begin{definition}{}{}
+    Sean $K$ un campo, $V$ un $K$-espacio vectorial, $\langle \quad, \quad \rangle$ un producto escalar en $V$. 
+
+    Dados $u,v \in V$ decimos que $u$ es ortogonal a $v$ si $\langle u,v \rangle = 0$ y lo denotamos por $u \perp v$.
+
+    Dado $S \subseteq V$ definimos el ortogonal a $S$ como:
+    \begin{align*}
+        S^{\perp} = \{ v \in V : \langle v, s \rangle = 0 \quad \forall s \in S \}
+    \end{align*}
+\end{definition}
+\begin{obs}{}{}
+    $A,B$ subconjuntos de $V$ con $A \subseteq B$ entonces $B^{\perp} \subseteq A^{\perp}$.
+\end{obs}
+\begin{proposition}{}{}
+    Sean $K$ un campo, $V$ un $K$-espacio vectorial, $\langle , \rangle$ un producto escalar en $V$. Sea $S$ subconjunto de $V$.
+    \begin{itemize}
+        \item $S^{\perp}$ es un subespacio de $V$.
+        \item $S^{\perp} = \langle S \rangle ^{\perp}$.
+    \end{itemize}
+\end{proposition}
+\begin{notation}{}{}
+    A $S^{\perp}$ se le llama el \textbf{subespacio ortogonal} de $S$.
+\end{notation}
+
+\begin{definition}{}{}
+    Sea $K$ un campo, $V$ un $K$-espacio vectorial, $\langle , \rangle$ un producto escalar en $V$.
+
+    Decimos que $\langle , \rangle$ es \textbf{no degenerado} si $V^{\perp} = \{ \theta_V \}$, es decir, si $v \in V$ es tal que $\langle v, w \rangle = 0 \quad \forall w \in V$ implica que $ v = \theta_V$.
+
+    En caso contrario decimos que $\langle , \rangle$ es \textbf{degenerado}.
+\end{definition}
+\begin{definition}{}{}
+    Sea $V$ un $\mathbb{R}$-espacio vectorial, $\langle \quad, \quad \rangle$ un producto escalar en $V$. Decimos que $\langle \quad, \quad \rangle$ es \textbf{positivo definido} si:
+    \begin{enumerate}
+        \item $\langle v,v \rangle \geq 0 \quad \forall v \in V$.
+        \item $\langle v,v \rangle = 0$ si y solo si $v = \theta_V$.
+    \end{enumerate}
+\end{definition}
+\begin{definition}{}{}
+    Sea $K = \mathbb{R}$ o $\mathbb{C}, V$ un $K$-espacio vectorial. Una función $\langle \quad, \quad \rangle: V \times V \rightarrow K$ es un \textbf{producto interno} si:
+    \begin{enumerate}
+        \item $\langle u,v \rangle = \overline{\langle v,u \rangle} \quad \forall u,v \in V$.
+        \item $\langle u + v, w \rangle = \langle u,w \rangle + \langle v,w \rangle \quad \forall u,v,w \in V$.
+        \item $\langle \lambda u, v \rangle = \lambda \langle u,v \rangle \quad \forall u,v \in V, \lambda \in K$.
+        \item $\langle v,v \rangle \geq 0 \quad \forall v \in V$ y además $\langle v,v \rangle = 0$ si y solo si $v = \theta_V$.
+    \end{enumerate}
+    Un espacio vectorial real o complejo con un producto interno se llama un  \textbf{espacio con producto interno}.
+\end{definition}
+\begin{obs}{}{}
+    $\langle w, u + v \rangle = \langle w,u \rangle + \langle w,v \rangle \quad \forall u,v,w \in V$.
+\end{obs}
+\begin{obs}{}{}
+    $\langle v, \lambda u \rangle = \overline{\lambda} \langle v,u \rangle \quad \forall u,v \in V, \lambda \in K$.
+\end{obs}

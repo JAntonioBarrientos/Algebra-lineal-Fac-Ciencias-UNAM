@@ -1,0 +1,54 @@
+\chapter{Transformaciones lineales y matrices}
+\section{Seccion 1}
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial de dimensión finita $n$. Una \textbf{base ordenada de V} es una $n$-ada de vectores de $V \, \, (v_1, \cdots, v_n)$ tal que $\{v_1, \cdots, v_n\}$ es una base de $V$.
+    
+    \textbf{Nota: } En ocasiones $(v_1, \cdots, v_n)$ y $\{v_1, \cdots, v_n\}$ se usan indistintamente y algunos autores hacen la convención de que los subíndices indican el orden de la base.
+\end{definition}
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial de dimensión finita $n$. Dada $B = (v_1, \cdots, v_n)$ una base ordenada de $V$, $v \in V$ el \textbf{vector de coordenadas de $v$ respecto a $B$ es}:
+    \begin{equation*}
+        [v]_B = \begin{pmatrix}
+            \alpha_1\\
+            \vdots\\
+            \alpha_n
+        \end{pmatrix} \in \mathcal{M}_{n\times 1}(K)
+    \end{equation*}
+    donde $v = \alpha_1 v_1 + \cdots + \alpha_n v_n$.
+\end{definition}
+\begin{obs}{}{}
+    $u,v \in V$ y $\lambda \in K$. $[u + \lambda v]_B = [u]_B + \lambda [v]_B$.
+\end{obs}
+\begin{notation}{}{}
+    Dada $A = \begin{pmatrix}
+        a_{1,1} & \cdots & a_{1,n}\\
+        \vdots & \ddots & \vdots\\
+        a_{m,1} & \cdots & a_{m,n}
+    \end{pmatrix} \in \mathcal{M}_{m \times n} (K)$, la \textbf{columna $j$-ésima de $A$} es:
+    $$col_j(A) = \begin{pmatrix}
+        a_{1,j}\\
+        \vdots\\
+        a_{m,j}
+    \end{pmatrix} $$
+\end{notation}
+\begin{definition}{}{}
+    Sean $V, W$ $K$-espacios vectoriales de dimensión finita, $B = (v_1, \cdots, v_n) \, \, \Gamma = (w_1, \cdots, w_m)$ bases ordenadas de $V$ y $W$ respectivamente, $T \in \mathcal{L}(V,W)$. La \textbf{matriz de $T$ respecto a $B$ y $\Gamma$} es una matriz $A \in \mathcal{M}_{m \times n}(K)$ tal que:
+    $$col_j(A) = [T(v_j)]_\Gamma$$
+    Se denotará por $[T]_{B}^\Gamma$
+\end{definition}
+\begin{obs}{}{}
+    Si $$[T]_{B}^\Gamma = \begin{pmatrix}
+        a_{1,1} & \cdots & a_{1,j} & \cdots & a_{1,n}\\
+        \vdots &  &\vdots& & \vdots\\
+        a_{m,1} & &a_{m,j}& & a_{m,n}
+    \end{pmatrix}$$
+    entonces $T(v_j) = a_{1,j}w_1 + \cdots + a_{m,j}w_m$.
+\end{obs}
+\begin{proposition}{}{}
+    Sean $V, W$ $K$-espacios vectoriales de dimensión finita, $T \in \mathcal{L}(V,W)$, $B, \Gamma$ bases ordenadas de $V$ y $W$ respectivamente. Entonces:
+    
+    Para todo $v \in V$
+    $$[T(v_j)]_\Gamma = [T]_B^\Gamma [v]_B$$
+\end{proposition}
+
+

@@ -1,0 +1,79 @@
+\section{Seccion 2}
+\begin{theorem}{}{}
+    Sean $V,W$ $K$-espacios vectoriales, $V$ de dimensión finita $n$. Sea $B = \{v_1, \cdots, v_n\}$ una base de $V$. Para cualesquiera $w_1, \cdots, w_n \in W$, existe una única $T \in \mathcal{L}(V,W)$ tal que $T(v_i) = w_i$ para $i = 1, \cdots, n$.
+\end{theorem}
+\begin{corollary}{}{}
+    Sean $V,W$ $K$-espacios vectoriales con $V$ de dimensión finita $n$, $B = \{v_1, \cdots, v_n\}$ una base de $V$. Si $T, S \in \mathcal{L}(V,W)$ son tales que $T(v_i) = S(v_i)$ para $i = 1, \cdots, n$, entonces $T = S$.
+\end{corollary}
+\begin{definition}{}{}
+    Sean $V,W$ $K$-espacios vectoriales.
+
+    Dados $T, S \in \mathcal{L}(V,W)$, la \textbf{suma} de $T$ y $S$:
+    $$T +_\mathcal{L} S: V \rightarrow W$$
+    $$(T +_\mathcal{L} S)(v)= T(v) +_W S(v)$$
+    Dados $T \in \mathcal{L}(V,W)$ y $\lambda \in K$, el \textbf{producto por escalares} de $T$ y $\lambda$:
+    $$\lambda \cdot_\mathcal{L} T: V \rightarrow W$$
+    $$(\lambda \cdot_\mathcal{L} T)(v) = \lambda \cdot_W T(v)$$
+\end{definition}
+\begin{proposition}{}{}
+    Sean $V,W$ $K$-espacios vectoriales $T, S \in \mathcal{L}(V,W)$, $\lambda, \in K$. Entonces $T + S \in \mathcal{L}(V,W)$ y $\lambda \cdot T \in \mathcal{L}(V,W)$.
+\end{proposition}
+\begin{theorem}{}{}
+    Sean $V,W$ $K$-espacios vectoriales. $\mathcal{L}(V,W)$ con la suma y el producto escalar definidos es un $K$-espacio vectorial.
+\end{theorem}
+\begin{definition}{}{}
+    Sean $V,W, U$ $K$-espacios vectoriales $T\in \mathcal{L}(V,W)$, $S\in \mathcal{L}(W,U)$ Definimos $S \circ T: V \rightarrow U$ como $(S \circ T)(v) = S(T(v))$ para todo $v \in V$.
+
+    \textbf{Nota:} La composición de funciones es asociativa
+\end{definition}
+\begin{theorem}{}{}
+    La composición de transformaciones lineales es lineal.
+\end{theorem}
+\begin{obs}{}{}
+    La composición de transformaciones lineales no es conmutativa.
+\end{obs}
+\begin{proposition}{}{}
+    Sean $V,W$ $K$-espacios vectoriales, $T_1, T_2 \in \mathcal{L}(V,W)$, $S_1, S_2 \in \mathcal{L}(W,U)$. Entonces:
+    \begin{enumerate}
+        \item $(S_1 + S_2) \circ T_1 = S_1 \circ T_1 + S_2 \circ T_1$
+        \item $S_1 \circ (T_1 + T_2) = S_1 \circ T_1 + S_1 \circ T_2$
+    \end{enumerate}
+\end{proposition}
+\begin{obs}{}{}
+    Sea $V$ un $K$-espacio vectorial. Definimos $Id_V: V \rightarrow V$ como $Id_V(v) = v$ para todo $v \in V$. $_Id_V \in \mathcal{L}(V,V)$.
+\end{obs}
+\begin{obs}{}{}
+    $V,W$ $K$-espacios vectoriales, $T \in \mathcal{L}(V,W)$. Entonces $T \circ Id_V = T = Id_W \circ T$.
+\end{obs}
+\begin{definition}{}{}
+    $A,B$ conjuntos, $f: A \rightarrow B$ $f$ es invertible si existe $f^{-1}: B \rightarrow A$ tal que $f^{-1} \circ f = Id_A$ y $f \circ f^{-1} = Id_B$.
+    $f$ es invertible si y solo si $f$ es biyectiva.
+\end{definition}
+\begin{proposition}{}{}
+    Sean $V, W$ $K$-espacios vectoriales, $T \in \mathcal{L}(V,W)$. Si $T$ es invertible entonces $T^{-1} \in \mathcal{L}(W,V)$.
+\end{proposition}
+\begin{theorem}{}{}
+    Sean $V, W$ $K$-espacios vectoriales de dimensión finita con $dim_K(V) = dim_K(W)$ y $T \in \mathcal{L}(V,W)$. Las siguientes condiciones son equivalentes:
+    \begin{enumerate}
+        \item $T$ es invertible
+        \item $T$ es inyectiva
+        \item $T$ es suprayectiva
+        \item Para toda $B = \{v_1, \cdots, v_n\}$ base de $V$, $\{T(v_1), T(v_2), \cdots, T(v_n)\}$ es una base de $W$.
+        \item Existe una $B = \{v_1, \cdots, v_n\}$ base de $V$, tal que $\{T(v_1), T(v_2), \cdots, T(v_n)\}$ es una base de $W$.
+    \end{enumerate}
+\end{theorem}
+\begin{theorem}{}{}
+    Sean $V, W$ $K$-espacios vectoriales, $V$ de dimensión finita. Si existe $T \in \mathcal{L}(V,W)$ invertible, entonces $W$ es de dimensión finita y $dim_K(V) = dim_K(W)$.
+\end{theorem}
+\begin{definition}{}{}
+    Sean $V,W$ $K$-espacios vectoriales. Decimos que $V$ \textbf{es isomorfo a $W$} si existe $T \in \mathcal{L}(V,W)$ invertible. En tal caso, decimos que $T$ es un \textbf{isomorfismo} de $V$ en $W$.
+\begin{notation}{}{}
+        $V \cong W$
+\end{notation}
+\end{definition}
+\begin{theorem}{}{}
+    Sean $V,W$ $K$-espacios vectoriales de dimensión finita. $V \cong W$ si y solo si $dim_K(V) = dim_K(W)$.
+\end{theorem}
+\begin{corollary}{}{}
+    Si $V$ es un $K$-espacio vectorial de dimensión finita $n$, entonces $V \cong K^n$.
+\end{corollary} 

@@ -1,0 +1,48 @@
+\chapter{Transformaciones lineales}
+\section{Seccion 1}
+\begin{definition}{}{}
+    Sean $V$ y $W$ $k$-espaacios vectoriales. Una función $T: V\rightarrow W$ es una \textbf{transformación lineal de $V$ en $W$} si:
+    \begin{enumerate}
+        \item $T(u+v)=T(u)+T(v)$ para todo $u,v\in V$.
+        \item $T(\lambda v)=\lambda T(v)$ para todo $v\in V$ y $\lambda\in k$.
+    \end{enumerate}
+\end{definition}
+\begin{obs}{}{}
+    Si $T$ es lineal, ent. $T(\theta_V) = \theta_W$.
+\end{obs}
+\begin{proposition}{}{}
+    Sean $V,W$ $K$-espacios vectoriales, $T:V \rightarrow W$. $T$ es lineal si y solo si $T(\lambda u + v) = \lambda T(u) + T(v)$ para todo $u,v\in V$ y $\lambda\in K$.
+\end{proposition}
+\begin{notation}{}{}
+    $V,W$ $K$-espacios vectoriales. Denotamos por $\mathcal{L}(V,W)$ al conjunto de todas las transformaciones lineales de $V$ en $W$.
+    $$\mathcal{L}(V,W) = \{T: V \rightarrow W \mid T \text{ es lineal}\}$$
+\end{notation}
+\begin{definition}{}{}
+    Sean $V, W$ $K$-espacios vectoriales, $T \in \mathcal{L}(V,W)$. Definimos el \textbf{núcleo} de $T$ como:
+    $$\ker T = Nuc(T) = \{v \in V \mid T(v) = \theta_W\}$$
+    La \textbf{imagen} de $T$ como:
+    $$Im(T) = \{T(v) \mid v \in V\}$$
+    \textbf{Nota: } Si $Nuc(T)$ es de dimensión finita, su dimensión es la \textbf{Nulidad} de $T$.
+    Si $Im(T)$ es de dimensión finita, su dimensión es el \textbf{Rango} de $T$.
+\end{definition}
+\begin{proposition}{}{}
+    Sean $V,W$ $K$-espacios vectoriales, $T \in \mathcal{L}(V,W)$. Entonces:
+    \begin{enumerate}
+        \item $\ker T$ es un subespacio de $V$.
+        \item $Im(T)$ es un subespacio de $W$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{theorem}{Teorema de la dimensión}{}
+        Sean $V,W$ $K$-espacios vectoriales, $T \in \mathcal{L}(V,W)$. Si $V$ es de dimensión finita, entonces $Nuc(T)$ y $Im(T)$ son de dimensión finita y:
+        $$dim(V) = dim(Nuc(T)) + dim(Im(T))$$
+\end{theorem}
+
+
+\begin{theorem}{}{}
+    Sean $V,W$ $K$-espacios vectoriales, $T \in \mathcal{L}(V,W)$. Entonces $T$ es inyectiva si y solo si $Nuc(T) = \{\theta_V\}$.
+\end{theorem}
+\begin{corollary}{}{}
+    Sean $V,W$ $K$-espacios vectoriales, $T \in \mathcal{L}(V,W)$. Si $V$ y $W$ son de dimensión finita y $dim_K(V) = dim_K(W)$, entonces $T$ es inyectiva si y solo si $T$ es suprayectiva.
+\end{corollary}
+

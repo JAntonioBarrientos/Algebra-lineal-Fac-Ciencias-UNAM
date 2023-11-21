@@ -1,0 +1,57 @@
+\section{Seccion 3}
+
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial de dimensión finita $n$, $B$ y $\Gamma$ bases ordenadas de $V$.
+    La \textbf{matriz de cambio de base de B a $\Gamma$} es:
+    \begin{align*}
+        [id_V]_B^\Gamma \in \mathcal{M}_{n \times n}(K)\\
+    \end{align*}
+\end{definition}
+\begin{obs}{}{}
+    $[id_V]_B^\Gamma$ es invertible pues $id_V$ es una transformación lineal invertible.
+    $$([id_V]_B^\Gamma)^{-1} = [id_V]_\Gamma^B$$
+\end{obs}
+\begin{obs}{}{}
+    Para todo $v \in V$:
+    \begin{align*}
+        [v]_\Gamma &= [id_V(v)]_\Gamma = [id_V]_B^\Gamma [v]_B
+    \end{align*}
+\end{obs}
+\begin{theorem}{}{}
+    Sean $V, W$ $K$-espacios vectoriales de dimensiones finitas $n$ y $m$, $B$ y $B'$ bases ordenadas de $V$ y $\Gamma$ y $\Gamma'$ bases ordenadas de $W$ respectivamente. Sea $T \in \mathcal{L}(V,W)$. Entonces:
+    Existen $P \in \mathcal{M}_{m \times m}(K), Q \in \mathcal{M}_{n \times n}(K)$ invertibles tales que:
+    \begin{align*}
+        [T]_{B'}^{\Gamma'} = P^{-1} [T]_{B}^{\Gamma} Q
+    \end{align*}
+\end{theorem}
+\begin{corollary}{}{}
+    Sea $V$ un $K$-espacio vectorial de dimensión finita $n$, $B$ y $B'$ bases ordenadas de $V$, $T \in \mathcal{L}(V, V)$.
+
+    Existe $P \in \mathcal{M}_{n \times n}(K)$ invertible tal que:
+
+    \begin{align*}
+        [T]_{B'}^{B'} = P^{-1} [T]_{B}^{B} P
+    \end{align*}
+    Decimos que $[T]_{B}^{B}$ y $[T]_{B'}^{B'}$ son \textbf{matrices conjugadas}.
+\end{corollary}
+\begin{theorem}{}{}
+    Sea $V$ un $K$-espacio vectorial de dimensión finita $n$. Si $A, C \in \mathcal{M}_{n \times n} (K)$ son tales que:
+    \begin{align*}
+        A &= P^{-1} C P
+    \end{align*}
+    Para alguna $P \in \mathcal{M}_{n \times n}(K)$ invertible, entonces existen $T \in \mathcal{L}(V,V)$ y bases ordenadas $B$ y $B'$ de $V$ tales que:
+    \begin{align*}
+        A &= [T]_B^B\\
+        C &= [T]_{B'}^{B'}
+    \end{align*}
+\end{theorem}
+\begin{proposition}{}{}
+    Sean $V, W$ $K$-espacios vectoriales de dimensión finita, $n$ y $m$ respectivamente, $T \in \mathcal{L}(V,W)$. Existen $B$ y $\Gamma$ bases ordenadas de $V$ y $W$ respectivamente tales que:
+    \begin{align*}
+        [T]_B^\Gamma &= \begin{pmatrix}
+            I_r & 0_{r \times (n - r)}\\
+            0_{(m-r)\times r} & 0_{(m-r)\times (n-r)}
+        \end{pmatrix}
+    \end{align*}
+    Con $r = dim(Im(T))$.
+\end{proposition}

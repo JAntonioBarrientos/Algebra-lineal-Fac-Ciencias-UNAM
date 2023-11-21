@@ -1,0 +1,56 @@
+% Archivo de paquete portadaUnam.sty
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{portadaUnam}[2023/09/10 Portada personalizada]
+
+\newcommand{\maketitlepage}[6]{
+    \begin{titlepage}
+        \thispagestyle{empty}
+        \begin{minipage}[c][0.17\textheight][c]{0.25\textwidth}
+            \begin{center}
+                \includegraphics[width=3.5cm, height=3.5cm]{resources/Logo_UNAM.png}
+            \end{center}
+        \end{minipage}
+        \begin{minipage}[c][0.195\textheight][t]{0.75\textwidth}
+            \begin{center}
+                \vspace{0.3cm}
+                \textsc{\large Universidad Nacional Aut\'onoma de M\'exico}\\[0.5cm]
+                \vspace{0.3cm}
+                \hrule height2.5pt
+                \vspace{.2cm}
+                \hrule height1pt
+                \vspace{.8cm}
+                \textsc{Facultad de Ciencias}\\[0.5cm] 
+            \end{center}
+        \end{minipage}
+        \begin{minipage}[c][0.81\textheight][t]{0.25\textwidth}
+            \vspace*{5mm}
+            \begin{center}
+                \hskip2.0mm
+                \vrule width1pt height13cm 
+                \vspace{5mm}
+                \hskip2pt
+                \vrule width2.5pt height13cm
+                \hskip2mm
+                \vrule width1pt height13cm \\
+                \vspace{5mm}
+                \includegraphics[height=4.0cm]{resources/Logo_FC.png}
+            \end{center}
+        \end{minipage}
+        \begin{minipage}[c][0.81\textheight][t]{0.75\textwidth}
+            \begin{center}
+                \vspace{1cm}
+                {#1}\\[.2in]
+                \vspace{2cm}            
+                \textsc{#2}\\[2cm]
+                \textsc{#3}\\[0.5cm]     
+                \textsc{#4}\\[0.5cm]        
+                \textsc{#5}\\[0.5cm]  
+                \textsc{#6}
+                \vspace{0.5cm}
+            \end{center}
+        \end{minipage}
+    \end{titlepage}
+}
+
+\endinput

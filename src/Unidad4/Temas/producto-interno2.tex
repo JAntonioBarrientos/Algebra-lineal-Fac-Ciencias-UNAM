@@ -1,0 +1,52 @@
+\section{Sección 2}
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno, $v,w \in V, w \neq \theta_V$. El \textbf{coeficiente de fourier de $v$ respecto a $w$} es:
+    \begin{align*}
+        \lambda = \frac{\langle v,w \rangle}{\langle w,w \rangle}
+    \end{align*}
+\end{definition}
+\begin{obs}{}{}
+    Si $\lambda = \frac{\langle v,w \rangle}{\langle w,w \rangle}$ entonces $v - \lambda w \perp w$.
+\end{obs}
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno, $S$ subconjunto de $V$. Decimos que $S$ es \textbf{ortogonal} si $\langle v, w \rangle = 0 \quad \forall v,w \in S, v \neq w$.
+\end{definition}
+\begin{proposition}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno, $S$ subconjunto de $V$. Si $S$ es ortogonal y $\theta_V \in S$, entonces $S$ es linealmente independiente.
+\end{proposition}
+\begin{obs}{}{}
+    Sea $\mathcal{B} = \{v_1, \cdots, v_m\}$ una base ortogonal de $V$, con $n = dim(V)$. Si $ v \in V$ se tiene que $v = \lambda_1 v_1 + \cdots + \lambda_n v_n$ con $\lambda_j$ el coeficiente de Fourier de $v$ con respecto a $v_j$.
+\end{obs}
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno. Dado $v \in V$ la \textbf{norma de $v$} es 
+    \begin{align*}
+        ||v|| = \sqrt{\langle v,v \rangle}
+    \end{align*}
+\end{definition}
+\begin{lemma}{CAUCHY SCHWARZ}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno. Entonces:
+    \begin{align*}
+        |\langle u,v \rangle| \leq ||u|| \cdot ||v|| \quad \forall u,v \in V
+    \end{align*}
+\end{lemma}
+\begin{proposition}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno.
+    \begin{enumerate}
+        \item $||v|| \geq 0 \quad \forall v \in V$ y además $||v|| = 0$ si y solo si $v = \theta_V$.
+        \item $||\lambda v|| = |\lambda| \cdot ||v|| \quad \forall v \in V, \lambda \in K$.
+        \item $||u+w|| \leq ||u|| + ||w|| \quad \forall u,w \in V$.
+    \end{enumerate}
+\end{proposition}
+\begin{lemma}{Pitágoras}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno, $u,v \in V$ con $u \perp v$.
+    \begin{enumerate}
+        \item $||u+v||^2 = ||u||^2 + ||v||^2$.
+        \item $||u-v||^2 = ||u||^2 + ||v||^2$.
+    \end{enumerate}
+\end{lemma}
+\begin{definition}{}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno, $v \in V$. Decimos que $v$ es \textbf{unitario} si $||v|| = 1$.
+\end{definition}
+\begin{theorem}{Gran Schmidt}{}
+    Sea $V$ un $K$-espacio vectorial con producto interno de dimensión finita. Entonces $V$ tiene una base ortogonal.
+\end{theorem}
