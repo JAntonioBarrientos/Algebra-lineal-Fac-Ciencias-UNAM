@@ -31,52 +31,18 @@
 
 \end{example}
 
-\begin{definition}{}{}\label{Subcampo}
-Sean $K$ un campo, $\tilde{K} \subseteq K$ y $\tilde{K} \neq \varnothing$. Se dice que $\tilde{K}$ es un subcampo de $K$ si $\tilde{K}$ es un campo con las operaciones de $K$.
+\begin{definition}{Subcampo}{subcampo}
+Sean $K$ un campo, $\tilde{K} \subseteq K$. Decimos que $\tilde{K}$ es un subcampo de $K$ si $\tilde{K}$ con las operaciones restringidas de $K$ es por sí mismo un campo.
 \end{definition}
 
-\begin{proposition}{}{}
-    Sea $K$ un campo, entonces:
-    \begin{enumerate} \label{proposicion1_campos}
-    \item $0_K$ es único. 
-\begin{proof}
-    Sean $0_K, 0_K' \in K$ elementos neutros aditivos.
-    \begin{align*}
-        a + 0_K &= a \\
-        a + 0_K' &= a 
-    \end{align*}
-    Entonces:
-    \begin{align*}
-        0_K &= 0_K + 0_K' && \text{Pues $0_K'$ es neutro aditivo.} \\
-        &= 0_K' && \text{Pues $0_K$ es neutro aditivo.} 
-    \end{align*}
-\end{proof}
+\begin{example}{}{}
+    \begin{itemize}
+        \item $\mathbb{Q}$ es un subcampo de $\mathbb{R}$.
+        \item $\mathbb{R}$ es un subcampo de $\mathbb{C}$.
+    \end{itemize}
+\end{example}
 
-    \item $-a$ es único.
-
-\begin{proof}
-    Sea $a\in K$ y sean $a_1, a_2 \in K$ inversos aditivos de $a$. Es decir:
-    \begin{align*}
-        a + a_1 &= a_1 + a = 0_K \\
-        a + a_2 &= a_2 + a = 0_K
-    \end{align*}
-    Entonces:
-    \begin{align*}
-        a_1 &= a_1 + 0_K && \text{Pues $0_K$ es neutro aditivo.} \\
-        &= a_1 + (a + a_2) && \text{Pues $a_2$ es inverso aditivo de $a$.} \\
-        &= (a_1 + a) + a_2 && \text{Pues $+$ es asociativa.} \\
-        &= 0_K + a_2 && \text{Pues $a_1$ es inverso aditivo de $a$.} \\
-        &= a_2 && \text{Pues $0_K$ es neutro aditivo.}
-    \end{align*}
-    Así $a_1 = a_2$, por lo tanto el inverso aditivo es único.
-\end{proof}
-
-    \item El neutro multiplicativo $1_K$ es único.
-    \item Si $x \in K-\{0_K\}$, entonces $x^{-1}$ es único.
-    \end{enumerate}
-\end{proposition}
-
-\begin{definition}{}{}[Espacio Vectorial]\label{def-espacio_vectorial}
+\begin{definition}{Espacio Vectorial}{espacio_vectorial}
     Sea $V$ un conjunto no vacío, $K$ un campo y $+:V\times V\rightarrow V$ y $\cdot:K\times V\rightarrow V$ dos operaciones. Se dice que $V$ es un espacio vectorial sobre $K $ si se cumplen las siguientes propiedades: 
     \begin{enumerate}
         \item $(u+v)+w = u+(v+w)$ para todo $u,v,w\in V$. Asociatividad.
@@ -90,6 +56,54 @@ Sean $K$ un campo, $\tilde{K} \subseteq K$ y $\tilde{K} \neq \varnothing$. Se di
     \end{enumerate}
     Decimos que $V,+,\cdot$ es un espacio vectorial sobre el campo $K$ o un $K$-espacio vectorial. A los elementos de $V$ los llamaremos vectores.
 \end{definition}
+
+
+\begin{example}{}{}
+    \begin{itemize}
+        \item $\mathbb{R}^n$ es un $\mathbb{R}$-espacio vectorial con las operaciones usuales.
+        \item $K$ campo, $K^n$ es un $K$-espacio vectorial con las operaciones usuales.
+        \begin{align*}
+            K^n = \{(x_1,\dots,x_n) \mid x_i \in K\} \\
+            (x_1,\dots,x_n), (y_1,\dots,y_n) \in K^n \\
+            (x_1,\dots,x_n) + (y_1,\dots,y_n) = (x_1+y_1,\dots,x_n+y_n) \\
+            \lambda \cdot (x_1,\dots,x_n) = (\lambda x_1,\dots,\lambda x_n)
+        \end{align*}
+
+        \item $K$ campo:
+        \begin{align*}
+            K^{\infty} = \{(x_1, x_2, \cdots) \mid x_i \in K \, \, \forall i \in \mathbb{N}^{+}\} \\
+            (x_1, x_2, \cdots), (y_1, y_2, \cdots) \in K^{\infty} \\
+            (x_1, x_2, \cdots) + (y_1, y_2, \cdots) = (x_1+y_1, x_2+y_2, \cdots) \\
+            \lambda \cdot (x_1, x_2, \cdots) = (\lambda x_1, \lambda x_2, \cdots)
+        \end{align*} 
+        Es un $K$-espacio vectorial.
+
+        \item $K$ campo, $\mathcal{M}_{m\times n}(K)$ con $m$ renglones y $n$ columnas con las operaciones usuales de suma y producto por escalar es un $K$-espacio vectorial.
+
+        \item $K$ campo, $K[x]$ polinomios en $x$ con coeficientes en $K$ con las operaciones usuales es un $K$-espacio vectorial.
+    \end{itemize}
+
+\end{example}
+
+\begin{example}{}{}
+    $K$ campo:
+    \begin{align*}
+        V &= \{f \mid f: K \rightarrow K\} \\
+    \end{align*}
+
+\end{example}
+
+\begin{proof}
+    Sean $f,g,h \in V$. 
+    P.D. $(f+g)+h = f+(g+h)$.
+
+    Por construcción $(f+g)+h$ 
+\end{proof}
+
+
+
+
+
 \begin{proposition}{}{}
     En un espacio vectorial el neutro es único.
 \end{proposition}
