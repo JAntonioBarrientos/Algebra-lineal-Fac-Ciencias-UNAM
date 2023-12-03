@@ -4,15 +4,15 @@
 \begin{definition}{Campo}{campo} 
     Sea $K$ un conjunto no vacío con dos operaciones binarias:\\ $+:K\times K\rightarrow K$ y $\cdot:K\times K\rightarrow K$. Se dice que $K$ es un campo si se cumplen las siguientes propiedades:
     \begin{enumerate}
-        \item $+$ es asociativa. \label{def-campo-asociativa-aditiva}
-        \item $+$ es conmutativa. \label{def-campo-conmutativa-aditiva}
-        \item Existe un elemento $0_K\in K$ tal que $a+0_K=a$ para todo $a\in K$. \label{def-campo-neutro-aditivo}
-        \item Para cada $a\in K$ existe un elemento $-a\in K$ tal que $a+(-a)=0$. \label{def-campo-inverso-aditivo}
-        \item $\cdot$ es asociativa. \label{def-campo-asociativa-multiplicativa}
-        \item $\cdot$ es conmutativa. \label{def-campo-conmutativa-multiplicativa}
-        \item Existe un elemento $1\in K$ tal que $a\cdot 1=a$ para todo $a\in K$. \label{def-campo-neutro-multiplicativo}
-        \item Para cada $a\in K - \{0_K\}$ existe un elemento $a^{-1}\in K$ tal que $a\cdot a^{-1}=1$. \label{def-campo-inverso-multiplicativo}
-        \item $a \cdot (b+c)=a\cdot b + a\cdot c$ para todo $a,b,c\in K$. \label{def-campo-distributiva-izquierda}
+        \item $+$ es asociativa. \label{def:campo-asociativa-aditiva}
+        \item $+$ es conmutativa. \label{def:campo-conmutativa-aditiva}
+        \item Existe un elemento $0_K\in K$ tal que $a+0_K=a$ para todo $a\in K$. \label{def:campo-neutro-aditivo}
+        \item Para cada $a\in K$ existe un elemento $-a\in K$ tal que $a+(-a)=0$. \label{def:campo-inverso-aditivo}
+        \item $\cdot$ es asociativa. \label{def:campo-asociativa-multiplicativa}
+        \item $\cdot$ es conmutativa. \label{def:campo-conmutativa-multiplicativa}
+        \item Existe un elemento $1\in K$ tal que $a\cdot 1=a$ para todo $a\in K$. \label{def:campo-neutro-multiplicativo}
+        \item Para cada $a\in K - \{0_K\}$ existe un elemento $a^{-1}\in K$ tal que $a\cdot a^{-1}=1$. \label{def:campo-inverso-multiplicativo}
+        \item $a \cdot (b+c)=a\cdot b + a\cdot c$ para todo $a,b,c\in K$. \label{def:campo-distributiva-izquierda}
     \end{enumerate}
     Llamaremos a los elementos de K escalares.
 \end{definition}
@@ -22,7 +22,7 @@
 \begin{itemize}
     \item $\mathbb{R}$ es un campo con las operaciones usuales.
     \item $\mathbb{Q}$ es un campo con las operaciones usuales.
-    \item $\mathbb{Z}$ no es un campo pues no cumple \ref{def-campo-inverso-multiplicativo}.
+    \item $\mathbb{Z}$ no es un campo pues no cumple \ref{def:campo-inverso-multiplicativo}.
     \item $\mathbb{Z}_p$ con $p$ primo es un campo.
     \item $\mathbb{Q}(\sqrt{2}) = \{x + \sqrt{2}y \mid x,y \in \mathbb{Q}\}$ es un campo.
     
@@ -86,58 +86,273 @@ Sean $K$ un campo, $\tilde{K} \subseteq K$. Decimos que $\tilde{K}$ es un subcam
 \end{example}
 
 \begin{example}{}{}
-    $K$ campo:
+    $K$ campo, $V = \{f \mid f: K \rightarrow K\}$ con las operaciones:
     \begin{align*}
-        V &= \{f \mid f: K \rightarrow K\} \\
+        f,g \in V &\quad \lambda \in K \\
+        f +_V g:& K \rightarrow K \\
+        & x \mapsto f(x) +_K g(x) \\
+        \lambda \cdot_V f:& K \rightarrow K \\
+        & x \mapsto \lambda \cdot_K f(x)
     \end{align*}
-
+    Es un $K$-espacio vectorial.
 \end{example}
 
 \begin{proof}
-    Sean $f,g,h \in V$. 
-    P.D. $(f+g)+h = f+(g+h)$.
+    
 
-    Por construcción $(f+g)+h$ 
+    \begin{enumerate}
+        \item Sean $f,g,h \in V$. P.D. 
+        Por construcción $(f+g)+h$, $f+(g+h)$ son funciones que van de $K \rightarrow K$. Veamos que tienen la misma regla de correspondencia.
+        
+        P.D. $((f+g)+h)(x) = (f+(g+h))(x) \quad \forall x \in K$.
+    
+        Sea $x \in K$.
+        \begin{align*}
+            ((f+_V g)+_V h)(x) &= (f+_V g)(x) +_K h(x) && \text{Por def. de suma en $V$} \\
+            &= (f(x) +_K g(x)) +_K h(x) && \text{Por def. de suma en $V$} \\
+            &= f(x) +_K (g(x) +_K h(x)) && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-asociativa-aditiva} asociatividad} \\
+            &= f(x) +_K (g+_V h)(x) && \text{Por def. de suma en $V$} \\
+            &= (f+_V (g+_V h))(x) && \text{Por def. de suma en $V$}
+        \end{align*}
+        
+        Por lo tanto $(f+g)+h = f+(g+h)$.
+
+
+        \item Sean $f,g \in V$. P.D. $f +_V g = g +_V f$.
+        Sabemos que $f +_V g: K \rightarrow K$ y $g +_V f: K \rightarrow K$. Veamos que tienen la misma regla de correspondencia.
+        \begin{align*}
+            (f +_V g)(x) &= f(x) +_K g(x) && \text{Por def. de suma en $V$} \\
+            &= g(x) +_K f(x) && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-conmutativa-aditiva} conmutatividad} \\
+            &= (g +_V f)(x) && \text{Por def. de suma en $V$}
+        \end{align*}
+    
+        Por lo tanto $f +_V g = g +_V f$.
+
+
+        \item  Proponemos $\theta_V$ como elemento neutro de $V$, tal que: 
+        \begin{align*}
+            \theta_V: K \rightarrow K \\
+            &x \mapsto 0_K
+        \end{align*}
+        P.D. $f +_V \theta_V = \theta_V +_V f = f \quad \forall f \in V$.
+    
+        Sea $f \in V$, sabemos que $f +_V \theta_V: K \rightarrow K$ y $\theta_V +_V f: K \rightarrow K$. Sea $x \in K$.
+        \begin{align*}
+            (f +_V \theta_V)(x) &= f(x) +_K \theta_V(x) && \text{Por def. de suma en $V$} \\
+            &= f(x) +_K 0_K && \text{Por def. de $\theta_V$} \\
+            &= f(x) && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-neutro-aditivo} elemento neutro} \\
+            &= 0_K +_K f(x) && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-neutro-aditivo} elemento neutro} \\
+            &= \theta_V(x) +_K f(x) && \text{Por def. de $\theta_V$} \\
+            &= (\theta_V +_V f)(x) && \text{Por def. de suma en $V$}
+        \end{align*}
+    
+        Concluimos entonces que $f +_V \theta_V = \theta_V +_V f = f$.
+
+
+
+        \item Sea $f \in V$. Proponemos $\tilde{f}$ como inverso aditivo de $f$, tal que:
+        \begin{align*}
+            \tilde{f}:& K \rightarrow K \\
+            &x \mapsto -f(x)
+        \end{align*}
+        P.D. $f +_V \tilde{f} = \tilde{f} +_V f = \theta_V$.
+        Sabemos que $f +_V \tilde{f}: K \rightarrow K$ y $\tilde{f} +_V f: K \rightarrow K$. Sea $x \in K$.
+    
+        P.D. $(f +_V \tilde{f})(x) = \theta_V(x)$.
+        \begin{align*}
+            (f +_V \tilde{f})(x) &= f(x) +_K \tilde{f}(x) && \text{Por def. de suma en $V$} \\
+            &= f(x) +_K (-f(x)) && \text{Por def. de $\tilde{f}$} \\
+            &= 0_K && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-inverso-aditivo} inverso aditivo} \\
+            &= \theta_V(x) && \text{Por def. de $\theta_V$}
+        \end{align*}
+        Por lo tanto $f +_V \tilde{f} = \theta_V$. Analogamente se prueba que $\tilde{f} +_V f = \theta_V$.
+
+
+        \item Sea $f \in V$. P.D. $1_K \cdot_V f = f$.\\
+        Sabemos que $1_K \cdot_V f: K \rightarrow K$, y $f: K \rightarrow K$. Sea $x \in K$.
+        \begin{align*}
+            (1_K \cdot_V f)(x) &= 1_K \cdot_K f(x) && \text{Por def. de producto por escalar en $V$} \\
+            &= f(x) && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-neutro-multiplicativo} elemento neutro mult.}
+        \end{align*}
+        Por lo tanto $1_K \cdot_V f = f$.
+
+
+        \item Sea $f \in V$, $\lambda, \mu \in K$. P.D. $\lambda \cdot_V (\mu \cdot_V f) = (\lambda \cdot_K \mu) \cdot_V f$.\\
+        Sabemos que por construcción $\lambda \cdot_V (\mu \cdot_V f): K \rightarrow K$ y $(\lambda \cdot_K \mu) \cdot_V f: K \rightarrow K$. Sea $x \in K$.
+
+        \begin{align*}
+            (\lambda \cdot_V (\mu \cdot_V f))(x)  &= \lambda \cdot_K (\mu \cdot_V f)(x) && \text{Por def. de producto por escalar en $V$} \\
+            &= \lambda \cdot_K (\mu \cdot_K f(x)) && \text{Por def. de producto por escalar en $V$} \\
+            &= (\lambda \cdot_K \mu) \cdot_K f(x) && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-asociativa-multiplicativa} asociatividad} \\
+            &= ((\lambda \cdot_K \mu) \cdot_V f)(x) && \text{Por def. de producto por escalar en $V$}
+        \end{align*}
+        Por lo tanto $\lambda \cdot_V (\mu \cdot_V f) = (\lambda \cdot_K \mu) \cdot_V f$.
+
+
+        \item Sea $f \in V$, $\lambda, \mu \in K$. P.D. $(\lambda +_K \mu) \cdot_V f = \lambda \cdot_V f +_V \mu \cdot_V f$.\\
+        Sabemos que por construcción $(\lambda +_K \mu) \cdot_V f: K \rightarrow K$ y $\lambda \cdot_V f +_V \mu \cdot_V f: K \rightarrow K$. Sea $x \in K$.
+
+        \begin{align*}
+            ((\lambda +_K \mu) \cdot_V f)(x) &= (\lambda +_K \mu) \cdot_K f(x) && \text{Por def. de producto por escalar en $V$} \\
+            &= (\lambda +_K \mu) \cdot_K f(x) && \text{Por def. de producto por escalar en $V$} \\
+            &= \lambda \cdot_K f(x) +_K \mu \cdot_K f(x) && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-distributiva-izquierda} distributividad} \\
+            &= (\lambda \cdot_V f +_V \mu \cdot_V f)(x) && \text{Por def. de suma en $V$}
+        \end{align*}
+
+        Por lo tanto $(\lambda +_K \mu) \cdot_V f = \lambda \cdot_V f +_V \mu \cdot_V f$.
+
+
+        \item Sea $f,g \in V$, $\lambda \in K$. \\
+        P.D. $\lambda \cdot_V (f +_V g) = \lambda \cdot_V f +_V \lambda \cdot_V g$.\\
+
+        Sabemos que por construcción $\lambda \cdot_V (f +_V g): K \rightarrow K$ y $\lambda \cdot_V f +_V \lambda \cdot_V g: K \rightarrow K$. Sea $x \in K$.
+        \begin{align*}
+            (\lambda \cdot_V (f +_V g))(x) &= \lambda \cdot_K (f +_V g)(x) && \text{Por def. de producto por escalar en $V$} \\
+            &= \lambda \cdot_K (f(x) +_K g(x)) && \text{Por def. de suma en $V$} \\
+            &= \lambda \cdot_K f(x) +_K \lambda \cdot_K g(x) && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-distributiva-izquierda} distributividad} \\
+            &= (\lambda \cdot_V f)(x) +_K (\lambda \cdot_V g)(x) && \text{Por def. de producto en $V$} \\
+            &= (\lambda \cdot_V f +_V \lambda \cdot_V g)(x) && \text{Por def. de suma en $V$}
+        \end{align*}
+
+        Por lo tanto $\lambda \cdot_V (f +_V g) = \lambda \cdot_V f +_V \lambda \cdot_V g$.
+
+    \end{enumerate}
+
+    Al cumplir las 8 propiedades, $V$ es un $K$-espacio vectorial.
 \end{proof}
 
 
 
-
-
-\begin{proposition}{}{}
+\begin{proposition}{}{neutro-aditivo-unico}
     En un espacio vectorial el neutro es único.
 \end{proposition}
+\begin{proof}
+    
+    Sean $K$ un campo y $V$ un $K$-espacio vectorial. Sean $\theta_V, \theta'_V$ elementos neutros de $V$. P.D. $\theta_V = \theta'_V$.
+
+    Note que:
+    \begin{align*}
+        \theta_V &= \theta_V + \theta'_V && \text{Por def. de elemento neutro} \\
+        &= \theta'_V +  \theta_V && \text{Por conmutatividad en \nameref{def:campo}} \\
+        &= \theta'_V && \text{Por def. de elemento neutro}
+    \end{align*}
+    Concluimos entonces que $\theta_V = \theta'_V$.
+\end{proof}
+
+
 \begin{proposition}{}{}
     En un espacio vectorial los inversos aditivos son únicos.
 \end{proposition}
-\begin{proposition}{}{}[Propiedades de cancelación]
+\begin{proof}
+    Sean $K$ un campo y $V$ un $K$-espacio vectorial. Sean $v, \hat{v}, \hat{\hat{v}}$ inversos aditivos de $v$. P.D. $\hat{v} = \hat{\hat{v}}$.
+
+    Note que:
+    \begin{align*}
+        \hat{v} &= \hat{v} + \theta_V && \text{Por def. de elemento neutro} \\
+        &= \hat{v} + (v + \hat{\hat{v}}) && \text{Por def. de inverso aditivo} \\
+        &= (\hat{v} + v) + \hat{\hat{v}} && \text{Por asociatividad en \nameref{def:campo}} \\
+        &= \theta_V + \hat{\hat{v}} && \text{Por def. de inverso aditivo} \\
+        &= \hat{\hat{v}} && \text{Por def. de elemento neutro}
+    \end{align*}
+\end{proof}
+
+
+\begin{proposition}{Propiedades de cancelación}{espacio-vectorial-cancelacion-suma}
     Sean $K$ un campo y $V$ un $K$-espacio vectorial. Sean $u,v,w\in V$. Entonces:
     \begin{enumerate}
         \item Si $u+v=u+w$, entonces $v=w$.
         \item Si $u+v=w+v$, entonces $u=w$.
     \end{enumerate}
 \end{proposition}
-\begin{proposition}{}{}
+\begin{proof}
+    \begin{enumerate}
+        \item Supongamos que $u+v=u+w$. P.D. $v=w$.
+        \begin{align*}
+            v &= \theta_V + v && \text{Por def. de elemento neutro} \\
+            &= (\hat{u} + u) + v && \text{Por def. de inverso aditivo} \\
+            &= \hat{u} + (u + v) && \text{Por asociatividad en \nameref{def:campo}} \\
+            &= \hat{u} + (u + w) && \text{Por hipótesis} \\
+            &= (\hat{u} + u) + w && \text{Por asociatividad en \nameref{def:campo}} \\
+            &= \theta_V + w && \text{Por def. de inverso aditivo} \\
+            &= w && \text{Por def. de elemento neutro}
+        \end{align*}
+        \item Supongamos que $u+v=w+v$. Por la conmutatividad en \nameref{def:campo} y por la propiedad anterior y se sigue que $v=u$.
+    \end{enumerate}
+\end{proof}
+
+
+\begin{proposition}{}{espacio-vectorial-producto-escalar-cero}
     Sean $K$ un campo y $V$ un $K$-espacio vectorial. Entonces:
     \begin{enumerate}
         \item $0_K \cdot v = \theta_V$ para todo $v\in V$.
         \item $\lambda \cdot \theta_V = \theta_V$ para todo $\lambda \in K$.
     \end{enumerate}
 \end{proposition}
-\begin{proposition}{}{}
+\begin{proof}
+    \begin{enumerate}
+        \item Sea $v \in V$. Entonces:
+        \begin{align*}
+            \theta_V + 0_K \cdot v &= 0_K \cdot v && \text{Por def. de elemento neutro} \\
+            &= (0_K + 0_K) \cdot v && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-neutro-aditivo} elemento neutro} \\
+            &= 0_K \cdot v + 0_K \cdot v && \text{Por def. distributividad \nameref{def:campo}} \\
+        \end{align*}
+        Y por \nameref{prop:espacio-vectorial-cancelacion-suma} se sigue que $0_K \cdot v = \theta_V$.
+
+        \item Sea $\lambda \in K$. Entonces:
+        \begin{align*}
+            \theta_V + \lambda \cdot_V \theta_V &= \lambda \cdot_V \theta_V && \text{Por def. de elemento neutro} \\
+            &= \lambda \cdot_V (\theta_V + \theta_V) && \text{Por def. de elemento neutro} \\
+            &= \lambda \cdot_V \theta_V + \lambda \cdot_V \theta_V && \text{Por def. distributividad \nameref{def:campo}}
+        \end{align*}
+        Y por \nameref{prop:espacio-vectorial-cancelacion-suma} se sigue que $\lambda \cdot_V \theta_V = \theta_V$.
+
+    \end{enumerate}
+\end{proof}
+
+
+
+
+\begin{proposition}{}{espacio-vectorial-inverso-aditivo}
     Sea $K$ un campo y $V$ un $K$-espacio vectorial. 
     
     Para todo $v\in V, (-1_K)v$ es el inverso aditivo de $v$.
 \end{proposition}
+\begin{proof}
+    Sea $v \in V$. Veamos que $(-1_K) \cdot_V v$ es su inverso aditivo.
+    \begin{align*}
+        v + ((-1_K) \cdot_V v) &= 1_K \cdot_V v + ((-1_K) \cdot_V v) && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-neutro-multiplicativo} elemento neutro} \\
+        &= (1_K + (-1_K)) \cdot_V v && \text{Por def. distributividad \nameref{def:campo}} \\
+        &= 0_K \cdot_V v && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-inverso-aditivo} inverso aditivo} \\
+        &= \theta_V && \text{Por prop. \ref{prop:espacio-vectorial-producto-escalar-cero}}
+    \end{align*}
+
+    Por lo tanto $(-1_K) \cdot_V v$ es el inverso aditivo de $v$.
+\end{proof}
+
+\begin{notation}{}{}
+    Dado $v \in V$ denotaremos por $-v$ a su inverso aditivo.
+\end{notation}
+
 \begin{corollary}{}{}
     Sean $K$ un campo y $V$ un $K$-espacio vectorial. Entonces:
     $(-\lambda)v = - (\lambda v) = \lambda (-v)$ para todo $\lambda \in K$ y para todo $v\in V$.
 \end{corollary}
 
+\begin{proof}
+    Sean $\lambda \in K$ y $v \in V$. Entonces:
 
-\begin{notation}{}{}
-    Dado $v \in V$ denotaremos por $-v$ a su inverso aditivo.
-\end{notation}
+    \begin{align*}
+        \lambda \cdot_V (-v) &= \lambda \cdot_V ((-1_K) \cdot_V v) && \text{Por prop. \ref{prop:espacio-vectorial-producto-escalar-cero} } \\
+        &= (\lambda \cdot_K (-1_K)) \cdot_V v && \text{Por def. \nameref{def:espacio_vectorial} punto 6} \\
+        &= (-\lambda) \cdot_V v && \text{Por def. de \nameref{def:campo} punto \ref{def:campo-inverso-multiplicativo} inverso mult.} \\
+        &= ((-1_K) \cdot_K \lambda) \cdot_V v && \text{Por prop del campo} \\
+        &= (-1_K) \cdot_V (\lambda \cdot_V v) && \text{Por def. \nameref{def:espacio_vectorial} punto 6} \\
+        &= -1 (\lambda v) && \text{Por prop. \ref{prop:espacio-vectorial-inverso-aditivo}} \\
+    \end{align*}
+\end{proof}
+
+
+
 \begin{notation}{}{}
     $K$ denotará siempre un campo.
 \end{notation}
